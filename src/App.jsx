@@ -1,6 +1,10 @@
+import {useState} from 'react'
 import Header from "./components/Header"
 function App() {
 
+  const [cantidad, setCantidad] = useState(10000);
+  console.log(cantidad)
+  
 // En el return no es recomendable mezclar la logica, 
 // esta reservada para la vista
   return (
