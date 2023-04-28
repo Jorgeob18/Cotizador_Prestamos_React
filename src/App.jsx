@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Header from './components/Header'
+import Button from './components/Button'
 function App () {
   const [cantidad, setCantidad] = useState(10000)
   const MIN = 0
@@ -30,18 +31,18 @@ function App () {
   return (
 
     <div className="my-20 max-w-lg mx-auto bg-white shadow p-10">
-      <Header />
+        {/* Aqui mandamos llamar nuestro componenete de la cabecera de la pagina */}
+        <Header />
       <div className="flex justify-between my-6">
-        <button
-          type='button'
-          className='h-10 w-10 flex items-center justify-center font-bold text-white text-2xl bg-lime-500 rounded-full hover:outline-none hover:ring-2 hover:ring-offset-2 hover:ring-lime-500'
-          onClick={handleClickDecremento}
-        >-</button>
-        <button
-          type='button'
-          className='h-10 w-10 flex items-center justify-center font-bold text-white text-2xl bg-lime-500 rounded-full hover:outline-none hover:ring-2 hover:ring-offset-2 hover:ring-lime-500'
-          onClick={handleClickIncremento}
-        >+</button>
+        {/* Aqui mandamos llamar otro componente y le pasamos propiedades o parametros */}
+        <Button
+          operador = '-'
+          fn = {handleClickDecremento}
+        />
+        <Button
+          operador = '+'
+          fn = {handleClickIncremento}
+        />
       </div>
       <input
         type="range"
